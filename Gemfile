@@ -25,6 +25,9 @@ gem 'devise-bootstrap-views', '~> 1.0'
 # IEX Cloud financial Data Client
 gem 'iex-ruby-client'
 
+# search btn icon
+gem "font-awesome-rails"
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

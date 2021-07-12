@@ -3,3 +3,28 @@
 .navbar-brand {
   // font-size: 13rem !im;
 }
+
+.search-area {
+  padding-top: 50px;
+}
+
+.no-left-padding {
+  padding-left: 0px !important;
+}
+.no-right-padding {
+  padding-right: 0px !important;
+}
+
+.no-round-right {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.no-round-left {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.results-block {
+  display: inline-block !important;
+}
