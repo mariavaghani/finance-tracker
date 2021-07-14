@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :user_stocks, only: [:create, :destroy]
-  resources :friends, except: [:index]
+  resources :friends, only: [:create, :destroy]
   get "my_friends", to: "friends#index"
   devise_for :users
   root 'pages#welcome'

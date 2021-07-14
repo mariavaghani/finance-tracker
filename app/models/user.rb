@@ -24,11 +24,8 @@ class User < ApplicationRecord
     under_stock_limit? && !stock_already_tracked?(ticker_symbol)
   end
 
-  def can_add_friend?(email)
-    return true
-    friend = User.where(email: email)
-    return false if current_user.friends
-    stocks.where(id: stock.id).exists?
+  def not_friends_with?(id_of_friend)
+    !self.friends.where(id: id_of_friend).exists?
   end
 
   def full_name
