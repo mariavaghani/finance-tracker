@@ -1,0 +1,30 @@
+<div class="results-block">
+  <%= render 'layouts/messages' %>
+</div>
+
+
+<% if @friends %>
+  <div class="card card-header results-block mt-3">
+    <table class="col-md-12">
+      <tbody>
+        <% @friends.each do |friend| %>
+          <tr>
+            <td><strong>Name: </strong> <%= friend.full_name %></td>
+            <td><strong>Email: </strong> <%= friend.email %></td>
+            <td><strong>Stocks tracked: </strong> <%= friend.stocks.count %></td>
+            <td><strong>Actions: </strong><%= link_to "View Profile", '#',
+                                          class: "btn btn-success" %></td>
+            <td><% if current_user.can_add_friend?(friend.email) %>
+              <%= link_to "Add to Friends", friends_path(user_id: current_user, friend_id: friend.id),
+                                              class: 'btn btn-success', method: :post %>
+            <% else %>
+              <span class="badge bg-secondary">
+                You are already friends with <%= friend.full_name %>
+              </span>
+            <% end %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% end %>
