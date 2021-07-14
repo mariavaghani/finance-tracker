@@ -20,6 +20,11 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
+                  <%= link_to user_path(current_user), class:"dropdown-item" do %>
+                    <%= fa_icon "user" %>&ensp;View Profile
+                  <% end %>
+                </li>
+                <li>
                   <%= link_to edit_user_registration_path, class:"dropdown-item" do %>
                     <%= fa_icon "edit" %>&ensp;Edit Profile
                   <% end %>

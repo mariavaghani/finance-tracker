@@ -1,0 +1,20 @@
+<h2>User Profile</h2>
+<div class="card card-header results-block mt-3">
+  <strong>Name: </strong> <%= @user.full_name %>
+  <strong>Email: </strong> <%= @user.email %>
+  <strong>Stocks tracked: </strong> <%= @user.stocks.count %>
+  <% if current_user.not_friends_with?(@user.id) %>
+    <%= link_to "Add to Friends", friends_path(user_id: current_user, friend_id: @user.id),
+                                    class: 'btn btn-success', method: :post %>
+  <% else %>
+    <span class="badge bg-light text-dark">
+      You are already friends with <%= @user.full_name %>
+    </span>
+  <% end %>
+</div>
+
+<% if !@tracked_stocks.empty? %>
+  <%= render 'stocks/list' %>
+<% else %>
+  <p class='lead mt-5'><%= @user.full_name %> is not tracking any stocks</p>
+<% end %>

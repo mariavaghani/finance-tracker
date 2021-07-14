@@ -13,7 +13,7 @@
             <td><strong>Email: </strong> <%= friend.email %></td>
             <td><strong>Stocks tracked: </strong> <%= friend.stocks.count %></td>
             <td>
-              <strong>Actions: </strong><%= link_to "View Profile", '#',
+              <strong>Actions: </strong><%= link_to "View Profile", user_path(friend),
                                           class: "btn btn-success" %>
             </td>
             <td>

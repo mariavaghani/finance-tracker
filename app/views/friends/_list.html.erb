@@ -18,6 +18,8 @@
           <td><%= friend.email %></td>
           <td><%= friend.stocks.count %></td>
           <td>
+            <%= link_to "View Profile", user_path(friend),
+                                        class: "btn btn-success" %>
             <%= link_to "Unfriend", friend_path(friend), method: :delete,
                 data: { confirm: "You want to unfriend #{friend.full_name}?"},
                 class: 'btn btn-sm btn-outline-warning' %>
